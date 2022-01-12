@@ -1,0 +1,6 @@
+body {
+    background-color: yellow;
+}
+.bg-img {
+    background-image: url(../img/planeta.jpeg);
+}

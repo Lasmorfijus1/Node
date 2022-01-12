@@ -1,0 +1,18 @@
+{
+  "name": "intro-002",
+  "version": "1.0.0",
+  "description": "first Node.js project",
+  "main": "index.js",
+  "devDependencies": {
+    "dead-server": "^1.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Justas <justas@skarzinskas.lt>",
+  "license": "ISC",
+  "dependencies": {
+    "gitignore": "^0.7.0"
+  }
+}
