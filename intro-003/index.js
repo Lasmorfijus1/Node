@@ -1,53 +1,65 @@
-// Rezultata pateikti tokiu sablonu:
-// Legendines asmenybes [Vardas] [Pavarde] trumpinys yra [V.P.]
-
-const s1 = 'mike Pukuotukas';
-const s2 = 'Chuck Norris';
-const s3 = 'Wonder WomaN';
-const s4 = 'Algimantas cekuolis';
-
-function inicialai(pavadinimas) {
-    const word = pavadinimas.split(' ');
-    const vardas = word[0][0].toUpperCase();
-    const pavarde = word[1][0].toUpperCase();
-
-    console.log(`Legendines asmenybes ${word[0]} ${word[1]} trumpinys yra ${vardas}.${pavarde}.`);
-
-}
-
-inicialai(s1);
-inicialai(s2);
-inicialai(s3);
-inicialai(s4);
+console.clear();
 
 
-// [Vardas] [Pavarde] yra [amzius] amziaus.
-const jonas = {
-    name: 'Jonas',
-    surname: 'Jonaitis',
-    age: 99,
-}
-const maryte = {
-    name: 'Maryte',
-    surname: 'Marytaite',
-    age: 87,
-}
 
-function prisistatytas(pavadinimas) {
-    const vardas = pavadinimas.name
-    const pavarde = word[1][0].toUpperCase();
+// const fs = require('fs/promises');
+// console.log(fs);
+// function multiplay (a, b) {
+//     return a * b;
+// }
+// multiplay(5,7);
+// console.log(multiplay(10,145));
+// console.log(`Bandau dauginti: ${multiplay(14,15)} , ar tenkina rezultatas?`);
 
-    console.log(`Legendines asmenybes ${word[0]} ${word[1]} trumpinys yra ${vardas}.${pavarde}.`);
 
-}
-function validatePIN (pin) {
-    //return true or false
-   
-    if ( (typeof(pin) === 'number') && (pin.length === 4 || pin.length === 6 ) ) {
-      return true
-    } else {
-      return false
+
+
+// async function readTheFile() {
+
+//     const content = await fs.readFile('./data/drinks.txt', 'utf-8');
+//     console.log(content);
+// }
+// readTheFile();
+
+const fs = require('fs/promises');
+
+(async () => {
+
+    const drinksContent = await fs.readFile('./data/drinks.txt', 'utf-8');
+    const drinkList = drinksContent.split('\r\n');
+    console.log(drinksContent);
+    console.log(drinkList);
+    let i = 0;
+
+    for (drink of drinkList) {
+
+        const drinkDetails = drink.split(' ');
+        const drinkPrice = drinkDetails[1];
+        const drinkName = drinkDetails[0];
+        const count = drinkDetails[2];
+        // const apyvarta = +count * +drinkPrice;
+        const apyvarta = parseFloat(count) * parseInt(drinkPrice);
+        
+        console.log(`Pasirinkimas ${++i}: ${drinkName}, kurio kaina yra ${drinkPrice} EUR buvo parduota 
+        už ${count} kiekis ir bendra apyvarta yra ${apyvarta} eurų`);
     }
-  }
-  validatePIN('123')
-  console.log(validatePIN('1234'))
+
+
+    const a = '455676';
+    const b = parseInt(a);
+    console.log(typeof a);
+    console.log(typeof b);
+})();
+
+
+
+
+
+
+
+
+
+// Pasirinkimas : [gerimo-pavadinimas] kurio kaina yra [kaina] Eur.
+// Pasirinkimas: [gerimo-pavadinimas]
+// Pasirinkimas: [gerimo-pavadinimas]
+
