@@ -1,0 +1,5 @@
+Arbata 0.14 10
+Alus 1.67 56
+Gira 2.07 76
+Peach 0.69 92
+Sultys 2.22 14
