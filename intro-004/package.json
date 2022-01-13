@@ -1,0 +1,16 @@
+{
+  "name": "intro-004",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon"
+  },
+  "keywords": [],
+  "author": "Justas <justas@skarzinskas.lt>",
+  "license": "ISC",
+  "devDependencies": {
+    "dead-server": "^1.0.5"
+  }
+}

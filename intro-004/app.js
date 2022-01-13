@@ -1,14 +1,4 @@
 console.log('Hello world');
-console.log('Naujas išvedimas');
-console.log('Naujas išvedimas');
-console.log('Naujas išvedimas');
-console.log('d');
-console.log('d');
-console.log('d');
-console.log('d');
-console.log('d');
-console.log('d');
-console.log('dsds');
+console.log(`Pradedame naują pamoką`);
 
-// for of - masyvams
-// for in - objektams 
+
