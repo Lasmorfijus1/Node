@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon"
+    "country": "nodemon ./country.js",
+    "dev": "nodemon ./app.js",
+    "json": "nodemon ./country.json"
   },
   "keywords": [],
   "author": "Justas <justas@skarzinskas.lt>",
