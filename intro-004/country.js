@@ -6,7 +6,6 @@ const path = require('path');
 // console.log(__dirname);
 // console.log(__filename);
 
-// [Parent-name] [Parent-surname] has [count] children and they names are: [Child-name], [Child-name], [Child-name].
 
 (async () => {
     function parseJSONtoObject(text) {
@@ -29,6 +28,7 @@ const path = require('path');
 
         return namesOnly.join(', ');
     }
+
 
     const fullPath = path.join(__dirname, './country.json');
     const countryContent = await fs.readFile(fullPath, 'utf-8');
