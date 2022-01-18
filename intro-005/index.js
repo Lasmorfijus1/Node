@@ -1,3 +1,4 @@
+const IsValid = require("./lib/IsValid.js");
 const jsonParse = require("./lib/jsonParse.js");
 const printList = require("./lib/printList.js");
 const readFile = require("./lib/readFile.js");
@@ -39,6 +40,12 @@ const readFile = require("./lib/readFile.js");
         'masina-wrong-29',
         'masina-wrong-30',
         'pomidoras',
+        'masina-wrong-31',
+        'masina-wrong-32',
+        'masina-wrong-33',
+        'masina-wrong-34',
+        'masina-wrong-35',
+        'masina-wrong-36',
         '',
         5,
         true,
@@ -47,9 +54,11 @@ const readFile = require("./lib/readFile.js");
         () => { },
         [],
         {},
-        undefined
+        undefined,
+        'masina-wrong-37',
     ];
 
+    const availableCurrency = ['Eur', 'Usd', 'Lit'];
     const goodsInfo = [];
 
     for (const item of goods) {
@@ -64,6 +73,17 @@ const readFile = require("./lib/readFile.js");
         if (itemObj === false) {
             continue;
         }
+        const { name, price, inStock, sold } = itemObj;
+        if (!IsValid.correctObject(itemObj, 4)
+            || !IsValid.nonEmptyString(name)
+            || !IsValid.correctObject(price, 2)
+            || !IsValid.nonNegativeNumber(price.value)
+            || !IsValid.nonEmptyString(price.currency)
+            || !availableCurrency.includes(price.currency)
+            || !IsValid.nonNegativeInteger(inStock)
+            || !IsValid.nonNegativeInteger(sold)) {
+            continue;
+        }
         goodsInfo.push(itemObj);
     }
 
@@ -71,6 +91,12 @@ const readFile = require("./lib/readFile.js");
     console.log('-----------------------------');
     console.log(printList(goodsInfo));
     console.log('-----------------------------');
+    console.log('Parduotuves suvestine:');
+    console.log('- turimu prekiu sandelyje: [total kiekis]');
+    console.log('- parduotu prekiu: [total kiekis]');
+    console.log('- suprekiauta suma: [total pinigu] [valiuta]');
+    console.log('- galimu pardavimu: [total pinigu] [valiuta]');
+    console.log('- maksimalus galima parduotuves apyvarta: [total pinigu] [valiuta]');
 })();
 
 
